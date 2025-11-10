@@ -169,6 +169,10 @@ h6 {
   padding-left: 5px;
 }
 
+.header .logo-lab {
+  width: 50px;
+}
+
 .header .btn-getstarted,
 .header .btn-getstarted:focus {
   color: var(--contrast-color);
@@ -199,6 +203,10 @@ h6 {
 
   .header .logo {
     order: 1;
+  }
+
+  .header .logo-lab {
+    width: 30px;
   }
 
   .header .btn-getstarted {
@@ -830,7 +838,6 @@ section,
 }
 
 
-
 @keyframes float-badge {
   0% {
     transform: translateY(0);
@@ -850,7 +857,7 @@ section,
 --------------------------------------------------------------*/
 .about .about-title {
   font-size: 1.75rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   line-height: 1.2;
   font-weight: 700;
 }
@@ -884,7 +891,7 @@ section,
   font-size: 1rem;
   color: #212529;
   line-height: 1.5;
-  max-width: 95%;
+  max-width: 100%;
   text-align: justify;
   line-height: 1.5rem;
 }
@@ -929,7 +936,7 @@ section,
   max-width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
-  padding: 20px 350px;
+  padding: 20px 150px;
 }
 
 .profile .row-profile {
@@ -951,8 +958,8 @@ section,
 
 .profile .profile-dosen .dosen-img {
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   object-fit: cover;
   margin-bottom: 10px;
 }
@@ -960,7 +967,7 @@ section,
 .profile .nama {
   white-space: nowrap;
   overflow: visible;
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 /* 🔹 Responsif untuk tablet dan mobile */
@@ -979,20 +986,34 @@ section,
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 500px) {
+  .profile {
+    padding: 10px 30px; /* kurangi jarak samping biar nggak mepet */
+  }
+
   .profile .row-profile {
-    flex-wrap: wrap;       /* di hp kecil jadi kebawah */
-    justify-content: center;
+    gap: 1rem;               /* jarak antar profil sedikit lebih rapat */
+    flex-wrap: wrap;         /* pastikan tetap kebawah */
+    justify-content: center; /* tetap di tengah */
   }
 
   .profile .profile-dosen {
-    flex-basis: 45%;
+    flex-basis: 100%;        /* satu baris satu profil */
+    max-width: 100%;
+  }
+
+  .profile .profile-dosen .dosen-img {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 8px;
   }
 
   .profile .nama {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    white-space: normal; /* biarkan teks panjang turun ke bawah */
   }
 }
+
 
 /* 🔹 Animasi fade-in untuk semua elemen di dalam .row-profile */
 .profile .row-profile {
