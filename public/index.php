@@ -1,61 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include '../includes/head.php'; ?>
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Lab Bussines Analytics</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-
-  <!-- Favicons -->
-  <link href="../assets/img/favicon.png" rel="icon">
-  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="../assets/css/style.css" rel="stylesheet">
-
-</head>
-
-<body class="index-page">
-
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="../assets/img/logo-lab.png" class="logo-lab" alt="logo">
-        <h1 class="sitename"></h1>
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#activities">Activities</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#profile">Profile</a></li>
-          <li><a href="#form">Form</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      <a href=""></a>
-
-    </div>
-  </header>
+  <?php include '../includes/header.php'; ?>
 
   <main class="main">
 
@@ -230,7 +175,7 @@
         <div class="row g-4 g-lg-5">
           <div class="col-lg-12">
             <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
-              <form action="#" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <form action="../process/peminjaman.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
                 <div class="row gy-4">
 
                   <div class="col-md-6">
@@ -238,7 +183,7 @@
                   </div>
 
                   <div class="col-md-6">
-                    <input type="text" name="nim" class="form-control" placeholder="NIM / NIP" required>
+                    <input type="text" name="nim_nip" class="form-control" placeholder="NIM / NIP" required>
                   </div>
 
                   <div class="col-md-6">
@@ -290,70 +235,4 @@
 
   </main>
 
-  <footer id="footer" class="footer">
-
-  <div class="container footer-top">
-    <div class="row gy-4">
-
-      <!-- Bagian Kiri -->
-      <div class="col-lg-4 col-md-6 footer-about">
-        <a href="index.html" class="logo d-flex align-items-center">
-          <span class="sitename">Landing</span>
-        </a>
-        <div class="footer-contact pt-3">
-          <p>Gedung Teknik Sipil, Teknik Informatika & Magister Terapan, POLITEKNIK NEGERI MALANG</p>
-          <p>Jl. Soekarno Hatta No.9, Mojolangu, Kec. Lowokwaru, Jawa Barat, Jawa Timur 65141</p>
-          <p class="mt-3"><strong><i class="bi bi-telephone-outbound-fill"> </i>Phone : </strong> <span>+1 5589 55488 55</span></p>
-          <p><strong><i class="bi bi-envelope-fill"> </i>Email : </strong> <span>polinema@example.com</span></p>
-        </div>
-        <div class="social-links d-flex mt-4">
-          <a href=""><i class="bi bi-twitter-x"></i></a>
-          <a href=""><i class="bi bi-facebook"></i></a>
-          <a href=""><i class="bi bi-instagram"></i></a>
-          <a href=""><i class="bi bi-linkedin"></i></a>
-        </div>
-      </div>
-
-      <!-- Bagian Kanan - Google Maps -->
-      <div class="col-lg-8 col-md-6 footer-map">
-        <h4 class="footer-map-title">Lokasi</h4>
-        <div class="map-container">
-          <iframe
-            src="https://maps.google.com/maps?q=-7.9440069,112.6145444&z=17&output=embed"
-            width="100%"
-            height="300"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-        <p class="map-note mt-2">
-          <a href="https://maps.app.goo.gl/gjbgHqMMvzLyqgk57" target="_blank">
-            Buka rute di Google Maps
-          </a>
-        </p>
-      </div>
-
-    </div>
-  </div>
-
-</footer>
-
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/aos/aos.js"></script>
-  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
-
-  <!-- Main JS File -->
-  <script src="../assets/js/main.js"></script>
-
-</body>
-
-</html>
+  <?php include '../includes/footer.php'; ?>

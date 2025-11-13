@@ -488,7 +488,7 @@
   <div class="login-container">
     <div class="login-header">
       <div class="logo-container">
-        <img src="assets/img/logo-lab.png" class="logo-lab" alt="Lab Business Analytics Logo">
+        <img src="../assets/img/logo-lab.png" class="logo-lab" alt="Lab Business Analytics Logo">
         <div class="logo-placeholder" style="display: none;"></div>
       </div>
       <h2>Lab Business Analytics</h2>
@@ -496,11 +496,11 @@
     </div>
     
     <div class="login-body">
-      <form id="loginForm">
+      <form id="loginForm" method="post" action="login_action.php">
         <div class="mb-3">
           <label for="username" class="form-label">Username</label>
           <div class="input-group">
-            <input type="text" class="form-control" id="username" placeholder="Masukkan username" required>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Masukkan username" required>
             <span class="input-icon"><i class="bi bi-person-fill"></i></span>
           </div>
         </div>
@@ -508,7 +508,7 @@
         <div class="mb-3">
           <label for="password" class="form-label">Password</label>
           <div class="input-group">
-            <input type="password" class="form-control" id="password" placeholder="Masukkan password" required>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan password" required>
             <span class="input-icon"><i class="bi bi-lock-fill"></i></span>
           </div>
         </div>
@@ -549,67 +549,14 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    // Login form handler
-    document.getElementById('loginForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
-      const errorMessage = document.getElementById('errorMessage');
-      const successMessage = document.getElementById('successMessage');
-      const loginText = document.getElementById('loginText');
-      const loadingSpinner = document.getElementById('loadingSpinner');
-      
-      // Tampilkan loading spinner
-      loginText.style.display = 'none';
-      loadingSpinner.style.display = 'block';
-      
-      // Simulasi proses login
-      setTimeout(function() {
-        // Validasi login
-        if (username === 'admin' && password === 'admin') {
-          // Login berhasil
-          errorMessage.classList.add('d-none');
-          successMessage.style.display = 'block';
-          
-          // Redirect ke index.html setelah 1.5 detik
-          setTimeout(function() {
-            window.location.href = 'index.html';
-          }, 1500);
-        } else {
-          // Login gagal, tampilkan pesan error
-          errorMessage.classList.remove('d-none');
-          successMessage.style.display = 'none';
-          
-          // Sembunyikan loading spinner
-          loginText.style.display = 'inline';
-          loadingSpinner.style.display = 'none';
-          
-          // Sembunyikan pesan error setelah 3 detik
-          setTimeout(function() {
-            errorMessage.classList.add('d-none');
-          }, 3000);
-        }
-      }, 1000);
-    });
-    
-    // Sembunyikan pesan error saat user mulai mengetik
+    // Enhancements only: hide error while typing
     document.getElementById('username').addEventListener('input', function() {
       document.getElementById('errorMessage').classList.add('d-none');
     });
-    
     document.getElementById('password').addEventListener('input', function() {
       document.getElementById('errorMessage').classList.add('d-none');
     });
-
-    // Enter key untuk submit form
-    document.getElementById('password').addEventListener('keypress', function(e) {
-      if (e.key === 'Enter') {
-        document.getElementById('loginForm').dispatchEvent(new Event('submit'));
-      }
-    });
-
-    // Cek jika logo gagal load
+    // Keep logo placeholder fallback
     window.addEventListener('load', function() {
       const logo = document.querySelector('.logo-lab');
       if (logo && logo.naturalHeight === 0) {
@@ -617,17 +564,6 @@
         document.querySelector('.logo-placeholder').style.display = 'flex';
       }
     });
-
-    // Touch device optimization
-    if ('ontouchstart' in window) {
-      document.body.classList.add('touch-device');
-      
-      // Increase tap targets for mobile
-      const interactiveElements = document.querySelectorAll('input, button, a');
-      interactiveElements.forEach(el => {
-        el.style.minHeight = '44px';
-      });
-    }
   </script>
 </body>
 
