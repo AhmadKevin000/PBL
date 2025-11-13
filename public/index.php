@@ -9,8 +9,8 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -18,14 +18,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -36,7 +36,7 @@
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/logo-lab.png" class="logo-lab" alt="logo">
+        <img src="../assets/img/logo-lab.png" class="logo-lab" alt="logo">
         <h1 class="sitename"></h1>
       </a>
 
@@ -85,7 +85,7 @@
 
           <div class="col-lg-6">
             <div class="hero-image" data-aos="zoom-out" data-aos-delay="300">
-              <img src="assets/img/pinguin-lab.png" alt="Hero Image" class="img-fluid">
+              <img src="../assets/img/pinguin-lab.png" alt="Hero Image" class="img-fluid">
             </div>
           </div>
         </div>
@@ -159,7 +159,7 @@
           <div class="col-md-6">
             <div class="gallery-card">
               <div class="thumb">
-                <img src="assets/img/about-5.webp" alt="Dokumentasi 1">
+                <img src="../assets/img/about-5.webp" alt="Dokumentasi 1">
               </div>
               <div class="desc">Praktikum mingguan: pengolahan data dengan tools BA.</div>
             </div>
@@ -168,7 +168,7 @@
           <div class="col-md-6">
             <div class="gallery-card">
               <div class="thumb">
-                <img src="assets/img/features-illustration-1.webp" alt="Dokumentasi 2">
+                <img src="../assets/img/features-illustration-1.webp" alt="Dokumentasi 2">
               </div>
               <div class="desc">Workshop penerapan analitik untuk studi kasus industri.</div>
             </div>
@@ -177,7 +177,7 @@
           <div class="col-md-6">
             <div class="gallery-card">
               <div class="thumb">
-                <img src="assets/img/features-illustration-1.webp" alt="Dokumentasi 3">
+                <img src="../assets/img/features-illustration-1.webp" alt="Dokumentasi 3">
               </div>
               <div class="desc">Kunjungan mitra dan diskusi kolaborasi riset.</div>
             </div>
@@ -186,7 +186,7 @@
           <div class="col-md-6">
             <div class="gallery-card">
               <div class="thumb">
-                <img src="assets/img/features-illustration-1.webp" alt="Dokumentasi 4">
+                <img src="../assets/img/features-illustration-1.webp" alt="Dokumentasi 4">
               </div>
               <div class="desc">Presentasi hasil proyek mahasiswa.</div>
             </div>
@@ -203,15 +203,15 @@
       </div>
       <div class="row-profile">
         <div class="profile-dosen">
-          <a href=""><img src="assets/img/avatar-1.webp" alt="Dosen" class="dosen-img"></a>
+          <a href=""><img src="../assets/img/avatar-1.webp" alt="Dosen" class="dosen-img"></a>
           <h3 class="nama">Khoirul Umam Novalidi.S.kom, M.kom</h3>
         </div>
         <div class="profile-dosen">
-          <a href=""><img src="assets/img/avatar-1.webp" alt="Dosen" class="dosen-img"></a>
+          <a href=""><img src="../assets/img/avatar-1.webp" alt="Dosen" class="dosen-img"></a>
           <h3 class="nama">Khoirul Umam Novalidi.S.kom, M.kom</h3>
         </div>
         <div class="profile-dosen">
-          <a href=""><img src="assets/img/avatar-1.webp" alt="Dosen" class="dosen-img"></a>
+          <a href=""><img src="../assets/img/avatar-1.webp" alt="Dosen" class="dosen-img"></a>
           <h3 class="nama">Khoirul Umam Novalidi.S.kom, M.kom</h3>
         </div>
       </div>
@@ -230,7 +230,7 @@
         <div class="row g-4 g-lg-5">
           <div class="col-lg-12">
             <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
-              <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <form action="#" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
                 <div class="row gy-4">
 
                   <div class="col-md-6">
@@ -345,15 +345,14 @@
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="../assets/js/main.js"></script>
 
 </body>
 
