@@ -39,29 +39,35 @@
     </section><!-- /Hero Section -->
 
     <!-- About Section -->
+    <?php
+      require_once __DIR__ . '/../config/koneksi.php';
+      $pdo = isset($pdo) ? $pdo : (isset($conn) ? $conn : null);
+      $lp = null;
+      if ($pdo) {
+        try {
+          $st = $pdo->query('SELECT * FROM lab_profile ORDER BY id_lab ASC LIMIT 1');
+          $lp = $st->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+          $lp = null;
+        }
+      }
+    ?>
     <section id="about" class="about section">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="container section-title" data-aos="fade-up">
           <h2>About Us</h2>
         </div>
-        <h3 class="about-title">LAB BUSSINES ANALYTICS</h3>
-        <p class="about-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-          totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit iste, facere expedita est fuga voluptatem atque! Corporis sint asperiores qui quae, 
-          placeat reprehenderit modi mollitia quaerat? Sequi aspernatur recusandae modi rerum numquam ex accusamus dolor asperiores eos, perspiciatis doloribus, sit sunt temporibus quod odit veniam, quo repudiandae quaerat quae quibusdam.</p>
+        <h3 class="about-title"><?php echo $lp ? htmlspecialchars($lp['nama_lab']) : 'LAB BUSSINES ANALYTICS'; ?></h3>
+        <p class="about-description"><?php echo $lp && isset($lp['deskripsi']) && $lp['deskripsi'] !== '' ? htmlspecialchars($lp['deskripsi']) : 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.'; ?></p>
         <div class="about-visimisi">
           <div class="visi">
             <span style="font-size: 25px;">Visi</span>
-            <p class="p-visi">Menjadi laboratorium unggul rujukan nasional sebagai inkubator solusi cerdas berbasis data, yang berfungsi sebagai mitra strategis industry untuk mengakselerasi transformasi bisnis dan pengambilan keputusan yang berdampak</p>
+            <p class="p-visi"><?php echo $lp && isset($lp['visi']) && $lp['visi'] !== '' ? nl2br(htmlspecialchars($lp['visi'])) : 'Visi laboratorium.'; ?></p>
           </div>
           <div class="misi">
             <span style="font-size: 25px;">Misi</span>
-            <p class="p-misi">1. Mengembangkan riset terapan <br>
-                2. Mengintegrasikan berbagai disiplin ilmu <br>
-                3. Membangun kemitraan strategis dengan industry <br>
-                4. Mengembangkan talenta (dosen dan mahasiswa) <br>
-                5. Menjalankan tata kelola laboratorium yang profesional, etis, dan berkelanjutan</p>
+            <p class="p-misi"><?php echo $lp && isset($lp['misi']) && $lp['misi'] !== '' ? nl2br(htmlspecialchars($lp['misi'])) : 'Misi laboratorium.'; ?></p>
           </div>
         </div>
       </div>
