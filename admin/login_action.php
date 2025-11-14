@@ -33,8 +33,6 @@ try {
     // Prefer password_verify, fallback to plain text match if initial data not hashed yet
     if (password_verify($password, $user['password'])) {
       $ok = true;
-    } elseif (hash_equals($user['password'], $password)) {
-      $ok = true;
     }
   }
 
