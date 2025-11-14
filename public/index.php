@@ -19,7 +19,7 @@
               </h1>
 
               <p class="mb-4 mb-md-5">
-                Lab ini berletak pada gedung sipil lt. 8
+                Menciptakan Solusi, Bukan Sekedar Analisis
               </p>
 
               <div class="hero-buttons">
