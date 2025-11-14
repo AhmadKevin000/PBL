@@ -75,6 +75,17 @@
     </section><!-- /About Section -->
 
     <!-- Activities Section -->
+    <?php
+      $activities = [];
+      if (isset($pdo) && $pdo) {
+        try {
+          $stAct = $pdo->query("SELECT judul, deskripsi, foto FROM kegiatan_lab ORDER BY tanggal DESC NULLS LAST, id_kegiatan ASC");
+          $activities = $stAct->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+          $activities = [];
+        }
+      }
+    ?>
     <section id="activities" class="about section contact light-background">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -85,11 +96,31 @@
         <p class="about-description">Ringkasan kegiatan yang dilakukan di Laboratorium Business Analytics, seperti praktikum, penelitian, workshop, dan kolaborasi industri.</p>
 
         <div class="about-list">
-          <h3 class="about-title">Praktikum</h3>
-          <p class="about-description">Kegiatan praktikum rutin yang difokuskan untuk meningkatkan keterampilan analisis data mahasiswa.</p>
+          <?php if ($activities): ?>
+            <?php foreach ($activities as $act): ?>
+              <h3 class="about-title"><?php echo htmlspecialchars($act['judul']); ?></h3>
+              <div class="row align-items-start g-3 mb-3">
+                <?php if (!empty($act['foto'])): ?>
+                  <div class="col-4 col-md-3">
+                    <img src="../<?php echo htmlspecialchars($act['foto']); ?>" alt="<?php echo htmlspecialchars($act['judul']); ?>" style="max-width: 120px; height: auto; border-radius: 4px; object-fit: cover;">
+                  </div>
+                  <div class="col-8 col-md-9">
+                    <p class="about-description mb-0"><?php echo nl2br(htmlspecialchars($act['deskripsi'])); ?></p>
+                  </div>
+                <?php else: ?>
+                  <div class="col-12">
+                    <p class="about-description mb-0"><?php echo nl2br(htmlspecialchars($act['deskripsi'])); ?></p>
+                  </div>
+                <?php endif; ?>
+              </div>
+            <?php endforeach; ?>
+          <?php else: ?>
+            <h3 class="about-title">Praktikum</h3>
+            <p class="about-description">Kegiatan praktikum rutin yang difokuskan untuk meningkatkan keterampilan analisis data mahasiswa.</p>
 
-          <h3 class="about-title">Riset & Workshop</h3>
-          <p class="about-description">Riset terapan, workshop, dan project kolaborasi bersama mitra untuk pemecahan masalah berbasis data.</p>
+            <h3 class="about-title">Riset &amp; Workshop</h3>
+            <p class="about-description">Riset terapan, workshop, dan project kolaborasi bersama mitra untuk pemecahan masalah berbasis data.</p>
+          <?php endif; ?>
         </div>
 
       </div>
