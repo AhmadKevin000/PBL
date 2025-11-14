@@ -170,23 +170,36 @@
     </section><!-- /Gallery Section -->
 
     <!-- Profile Section -->
+    <?php
+      $profiles = [];
+      if (isset($pdo) && $pdo) {
+        try {
+          $stProf = $pdo->query('SELECT id_anggota, nama, jabatan, foto FROM anggota_lab ORDER BY sort_order ASC, id_anggota ASC');
+          $profiles = $stProf->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+          $profiles = [];
+        }
+      }
+    ?>
     <section id="profile" class="profile section">
       <div class="container section-title" data-aos="fade-up">
         <h2>Profile</h2>
       </div>
       <div class="row-profile">
-        <div class="profile-dosen">
-          <a href=""><img src="../assets/img/avatar-1.webp" alt="Dosen" class="dosen-img"></a>
-          <h3 class="nama">Khoirul Umam Novalidi.S.kom, M.kom</h3>
-        </div>
-        <div class="profile-dosen">
-          <a href=""><img src="../assets/img/avatar-1.webp" alt="Dosen" class="dosen-img"></a>
-          <h3 class="nama">Khoirul Umam Novalidi.S.kom, M.kom</h3>
-        </div>
-        <div class="profile-dosen">
-          <a href=""><img src="../assets/img/avatar-1.webp" alt="Dosen" class="dosen-img"></a>
-          <h3 class="nama">Khoirul Umam Novalidi.S.kom, M.kom</h3>
-        </div>
+        <?php if ($profiles): ?>
+          <?php foreach ($profiles as $p): ?>
+            <div class="profile-dosen">
+              <a href="profile-detail.php?id=<?php echo (int)$p['id_anggota']; ?>">
+                <img src="../<?php echo htmlspecialchars($p['foto']); ?>" alt="<?php echo htmlspecialchars($p['nama']); ?>" class="dosen-img">
+              </a>
+              <h3 class="nama"><?php echo htmlspecialchars($p['nama']); ?></h3>
+            </div>
+          <?php endforeach; ?>
+        <?php else: ?>
+          <div class="profile-dosen">
+            <h3 class="nama">Belum ada data profil anggota.</h3>
+          </div>
+        <?php endif; ?>
       </div>
     </section>
 
