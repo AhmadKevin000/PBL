@@ -128,6 +128,17 @@
     </section><!-- /Activities Section -->
 
     <!-- Gallery Section -->
+    <?php
+      $galleryItems = [];
+      if (isset($pdo) && $pdo) {
+        try {
+          $stGal = $pdo->query('SELECT image_path, caption FROM gallery WHERE is_active = true ORDER BY sort_order ASC, id_gallery ASC');
+          $galleryItems = $stGal->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+          $galleryItems = [];
+        }
+      }
+    ?>
     <section id="gallery" class="gallery section">
 
       <div class="container section-title" data-aos="fade-up">
@@ -137,42 +148,22 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row g-5">
-
-          <div class="col-md-6">
-            <div class="gallery-card">
-              <div class="thumb">
-                <img src="../assets/img/about-5.webp" alt="Dokumentasi 1">
+          <?php if ($galleryItems): ?>
+            <?php foreach ($galleryItems as $item): ?>
+              <div class="col-md-6">
+                <div class="gallery-card">
+                  <div class="thumb">
+                    <img src="../<?php echo htmlspecialchars($item['image_path']); ?>" alt="Gallery item">
+                  </div>
+                  <div class="desc"><?php echo htmlspecialchars($item['caption']); ?></div>
+                </div>
               </div>
-              <div class="desc">Praktikum mingguan: pengolahan data dengan tools BA.</div>
+            <?php endforeach; ?>
+          <?php else: ?>
+            <div class="col-12 text-center">
+              <p>Belum ada gambar gallery yang aktif.</p>
             </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="gallery-card">
-              <div class="thumb">
-                <img src="../assets/img/features-illustration-1.webp" alt="Dokumentasi 2">
-              </div>
-              <div class="desc">Workshop penerapan analitik untuk studi kasus industri.</div>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="gallery-card">
-              <div class="thumb">
-                <img src="../assets/img/features-illustration-1.webp" alt="Dokumentasi 3">
-              </div>
-              <div class="desc">Kunjungan mitra dan diskusi kolaborasi riset.</div>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="gallery-card">
-              <div class="thumb">
-                <img src="../assets/img/features-illustration-1.webp" alt="Dokumentasi 4">
-              </div>
-              <div class="desc">Presentasi hasil proyek mahasiswa.</div>
-            </div>
-          </div>
+          <?php endif; ?>
         </div>
       </div>
 
