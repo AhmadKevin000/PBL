@@ -19,6 +19,9 @@ require_login();
 
     <div class="row g-3">
       <div class="col-md-3">
+        <a class="btn btn-primary w-100" href="peminjaman.php">Kelola Peminjaman Lab</a>
+      </div>
+      <div class="col-md-3">
         <a class="btn btn-primary w-100" href="about.php">Kelola About (lab_profile)</a>
       </div>
       <div class="col-md-3">
